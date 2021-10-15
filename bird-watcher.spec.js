@@ -6,7 +6,7 @@ describe('bird watcher', () => {
       const birdsPerDay = [9, 0, 8, 4, 5, 1, 3];
       expect(totalBirdCount(birdsPerDay)).toBe(30);
     });
-/*
+
     test('works for a short bird count list', () => {
       const birdsPerDay = [2];
       expect(totalBirdCount(birdsPerDay)).toBe(2);
@@ -72,7 +72,7 @@ describe('bird watcher', () => {
       const expected = [3, 8, 5, 1, 4, 5, 1, 4, 2, 6, 1, 3, 1, 1, 6, 4, 2, 1, 3, 6];
       expect(fixBirdCountLog(birdsPerDay)).toEqual(expected);
     });
-    */
+    
   });  
 });
 

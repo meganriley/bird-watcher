@@ -11,7 +11,11 @@
  * @returns {number} total bird count
  */
 export function totalBirdCount(birdsPerDay) {
-  throw new Error('Please implement the totalBirdCount function');
+  let total = 0;
+  for (let i = 0; i < birdsPerDay.length; i++) {
+    total += birdsPerDay[i];
+  }
+  return total;
 }
 
 /**
@@ -22,7 +26,14 @@ export function totalBirdCount(birdsPerDay) {
  * @returns {number} birds counted in the given week
  */
 export function birdsInWeek(birdsPerDay, week) {
-  throw new Error('Please implement the birdsInWeek function');
+  let result = []
+  for (var i=0,len=birdsPerDay.length; i<len; i+=7) {
+    result.push(birdsPerDay.slice(i,i+7));
+  } 
+  // @ts-ignore
+  let totalWeek = result[week-1];
+  // @ts-ignore
+  return totalBirdCount(totalWeek);
 }
 
 /**
@@ -33,5 +44,8 @@ export function birdsInWeek(birdsPerDay, week) {
  * @returns {number[]} corrected bird count data
  */
 export function fixBirdCountLog(birdsPerDay) {
-  throw new Error('Please implement the fixBirdCountLog function');
+  for (let i = 0; i < birdsPerDay.length; i += 2) { //Add two to i every iteration
+    birdsPerDay[i]++; //Add the element at index i to a temporary array
+  }
+  return birdsPerDay;
 }
